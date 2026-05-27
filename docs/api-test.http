@@ -1,0 +1,65 @@
+### Gateway health
+GET http://localhost:8081/health
+
+### Register user
+POST http://localhost:8081/users/register
+Content-Type: application/json
+
+{
+  "name": "Nguyen Tien Dat",
+  "email": "dat@example.com",
+  "password": "123456",
+  "role": "admin"
+}
+
+### Login
+POST http://localhost:8081/users/login
+Content-Type: application/json
+
+{
+  "email": "dat@example.com",
+  "password": "123456"
+}
+
+### Get products
+GET http://localhost:8081/products
+
+### Add product
+POST http://localhost:8081/products
+Content-Type: application/json
+
+{
+  "name": "Adam Professional Cue",
+  "brand": "Adam",
+  "category": "pool cue",
+  "price": 5900000,
+  "description": "Gậy bida phù hợp cho người chơi bán chuyên."
+}
+
+### Get inventory
+GET http://localhost:8081/inventory
+
+### Set inventory for product 1
+PATCH http://localhost:8081/inventory/1
+Content-Type: application/json
+
+{
+  "quantity": 20
+}
+
+### Create order
+POST http://localhost:8081/orders
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "items": [
+    { "productId": 1, "quantity": 2 }
+  ]
+}
+
+### Get orders
+GET http://localhost:8081/orders
+
+### Get notifications
+GET http://localhost:8081/notifications
